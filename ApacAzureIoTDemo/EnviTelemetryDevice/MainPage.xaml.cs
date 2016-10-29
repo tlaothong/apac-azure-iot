@@ -130,6 +130,7 @@ namespace EnviTelemetryDevice
             {
                 useD2 = false;
             }
+
             if (useD2 ?? false)
             {
                 useD2 = false;
@@ -150,20 +151,22 @@ namespace EnviTelemetryDevice
         {
             var hat = this.hat;
 
-            if (useD2 ?? false)
+            if (useD2.HasValue)
             {
-                useD2 = false;
-                hat.D2.Color = FEZHAT.Color.Green;
-                hat.D3.TurnOff();
+                if (useD2 ?? false)
+                {
+                    useD2 = false;
+                    hat.D2.Color = FEZHAT.Color.Green;
+                    hat.D3.TurnOff();
+                }
+                else
+                {
+                    useD2 = null;
+                    hat.D2.TurnOff();
+                    hat.D3.Color = FEZHAT.Color.Green;
+                }
             }
             else
-            {
-                useD2 = null;
-                hat.D2.TurnOff();
-                hat.D3.Color = FEZHAT.Color.Green;
-            }
-
-            if (!useD2.HasValue)
             {
                 useD2 = true;
                 hat.D2.TurnOff();
