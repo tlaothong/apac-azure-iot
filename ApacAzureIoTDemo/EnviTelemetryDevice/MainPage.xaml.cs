@@ -153,17 +153,19 @@ namespace EnviTelemetryDevice
 
             if (useD2.HasValue)
             {
+                var blinkColor = this.enableTelemetry ? FEZHAT.Color.Green : FEZHAT.Color.Yellow;
+
                 if (useD2 ?? false)
                 {
                     useD2 = false;
-                    hat.D2.Color = FEZHAT.Color.Green;
+                    hat.D2.Color = blinkColor;
                     hat.D3.TurnOff();
                 }
                 else
                 {
                     useD2 = null;
                     hat.D2.TurnOff();
-                    hat.D3.Color = FEZHAT.Color.Green;
+                    hat.D3.Color = blinkColor;
                 }
             }
             else
