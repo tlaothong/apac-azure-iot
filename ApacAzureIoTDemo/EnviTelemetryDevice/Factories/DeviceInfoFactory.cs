@@ -30,7 +30,7 @@ namespace EnviTelemetryDevice.Factories
                 CreatedTime = DateTime.UtcNow,
                 Latitude = 16.483000,
                 Longitude = 102.819400,
-                InstalledRAM = "2 GB",
+                InstalledRAM = "1 GB",
                 Processor = "ARM",
                 DeviceState = "normal",
                 Manufacturer = "APAC IoT",
