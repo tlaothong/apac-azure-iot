@@ -43,8 +43,10 @@ namespace EnviTelemetryDevice
 
         public void Setup()
         {
+            const int TICK_MILLIS = 321;
+
             var timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromMilliseconds(321);
+            timer.Interval = TimeSpan.FromMilliseconds(TICK_MILLIS);
             timer.Tick += Timer_Tick;
             this.timer = timer;
 
